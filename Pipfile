@@ -11,6 +11,7 @@ boto3 = "*"
 flask = "*"
 pillow = "*"
 waitress = "*"
+redis = "*"
 
 [requires]
 python_version = "3.6"

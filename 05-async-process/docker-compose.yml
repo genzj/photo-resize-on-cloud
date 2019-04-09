@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  redis:
+    image: redis:5-alpine
+
+  webapp:
+    build: ./
+    image: photo-resize-demo:latest
+    ports:
+      - "8080:8080"
+    command: /code/wait-for.sh -t 120 "redis:6379" -- waitress-serve --listen "0.0.0.0:8080" "app:app"
+    environment:
+      REDIS_HOST: redis
+
+
+  worker:
+    build: ./
+    image: photo-resize-demo:latest
+    command: /code/wait-for.sh -t 120 "redis:6379" -- python /code/worker.py
+    environment:
+      REDIS_HOST: redis
