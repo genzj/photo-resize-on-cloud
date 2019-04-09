@@ -12,6 +12,7 @@ flask = "*"
 pillow = "*"
 waitress = "*"
 redis = "*"
+prometheus-client = "*"
 
 [requires]
 python_version = "3.6"
