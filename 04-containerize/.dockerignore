@@ -1,0 +1,23 @@
+.git/
+*.egg-info/
+**/node_modules/
+Dockerfile
+
+*.log
+*.pyc
+__pycache__
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Temporary
+.netrwhist
+*~
+
+# Persistent undo
+[._]*.un~
+

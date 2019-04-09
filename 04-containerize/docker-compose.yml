@@ -1,0 +1,7 @@
+version: '3.1'
+services:
+  webapp:
+    build: ./
+    image: photo-resize-demo:latest
+    ports:
+          - "8080:8080"
