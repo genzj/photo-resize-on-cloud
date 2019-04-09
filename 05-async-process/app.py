@@ -66,7 +66,7 @@ def upload_file():
     filename = '%s%s' % (uuid4(), splitext(file.filename)[1],)
     upload_file = 'src-' + filename
     resize_file = 'resize-' + filename
-    # upload_fileobj(file, upload_file)
+    upload_fileobj(file, upload_file)
     publish_task(upload_file, resize_file)
     return Response(url_for('view_file', filename=resize_file, _external=True))
 
