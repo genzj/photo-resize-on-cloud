@@ -24,7 +24,7 @@ def resize_image(image_path, target_path):
 
 def main():
     for src in sys.argv[1:]:
-        dest = '%s_thumbnail.%s' % os.path.splitext(src)
+        dest = '%s_thumbnail%s' % os.path.splitext(src)
         resize_image(src, dest)
 
 
