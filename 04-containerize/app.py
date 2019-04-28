@@ -13,9 +13,12 @@ logger = logging.getLogger('waitress')
 logger.setLevel(logging.INFO)
 
 REGION = 'ap-southeast-1'
-ACCESS_ID = 'AKIAVLD43AEH7WCO4TY7'
-SECRET_KEY = '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'
+ACCESS_ID = ''
+SECRET_KEY = ''
 BUCKET_NAME = 'photo-resize-demo-1904'
+
+if not ACCESS_ID or not SECRET_KEY:
+    raise Exception('ACCESS_ID and SECRET_KEY must be set')
 
 s3 = boto3.resource('s3', aws_access_key_id=ACCESS_ID, aws_secret_access_key=SECRET_KEY)
 bucket = s3.Bucket(BUCKET_NAME)
